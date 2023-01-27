@@ -3,7 +3,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-
+        activeUser : 0,
         contacts: [
 
             {
@@ -181,9 +181,12 @@ const { createApp } = Vue
     },
 
     methods : {
+        
         getIcon(number) {
             return "img/avatar" + this.contacts[number].avatar + ".jpg";
-        }
+        },
+
+        
     }
 }).mount('#app')
   

@@ -109,24 +109,13 @@
                         </header>
                         <main class="right-main overflow-y-auto">
                             <div class="row">
-                                <div class="col-12 d-flex sent-container">
-                                    <div class="sent position-relative">
-                                        <span class="position-absolute end-0 f-text-size py-4 px-1 text-color"> 12:00 </span>
-                                        Hai portato a spasso il cane ?
+                                <div class="col-12 d-flex" v-bind:class="(message.status == 'sent') ? 'sent-container' : 'received-container'" v-for="message in contacts[activeUser].messages">
+                                    <div class="position-relative" v-bind:class="(message.status == 'sent') ? 'sent' : 'received'">
+                                        <span class="position-absolute end-0 f-text-size py-4 px-1 text-color"> {{ message.date }} </span>
+                                        {{ message.message }}
                                     </div>
                                 </div>
-                                <div class="col-12 d-flex sent-container">
-                                    <div class="sent position-relative">
-                                        <span class="position-absolute end-0 f-text-size py-4 px-1 text-color"> 12:00 </span>
-                                        Ricordati di stendere i panni
-                                    </div>
-                                </div>
-                                <div class="col-12 d-flex received-container">
-                                    <div class="received position-relative">
-                                        <span class="position-absolute end-0 f-text-size py-4 px-1 text-color"> 12:00 </span>
-                                        Tutto fatto !
-                                    </div>
-                                </div>
+                                
                                 
                             </div>
                         </main>
