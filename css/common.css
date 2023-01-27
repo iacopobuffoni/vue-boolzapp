@@ -42,3 +42,7 @@ body {
 .bell-color {
     color: #8edafc;
 }
+
+.active {
+    background-color: #e9ebeb;
+}
