@@ -68,7 +68,7 @@
                                     </header>
                                     <main>
                                         <ul class="list-unstyled">
-                                            <li class="p-3 d-flex border-bottom position-relative" v-for="(contact, index) in contacts">
+                                            <li class="p-3 d-flex border-bottom position-relative" :class="(clicked == index) ? 'active' : '' " v-for="(contact, index) in contacts" @click="showActiveUser(index)">
                                                 <span class="position-absolute top-0 end-0 f-text-size p-2 text-color"> 12:00 </span>
                                                 <div class="col-2">
                                                     <div class="avatar">
@@ -91,10 +91,10 @@
                             <div class="row h-100 align-items-center">
                                 <div class="col-6 d-flex px-4">
                                     <div class="avatar">
-                                        <img src="img/avatar_1.jpg" alt="" class="w-100">    
+                                        <img :src="getIcon(activeUser)" alt="" class="w-100">    
                                     </div>
                                     <div class="">
-                                        <span class="mx-2 d-block"> Michele </span>
+                                        <span class="mx-2 d-block"> {{ contacts[activeUser].name }} </span>
                                         <span class="mx-2 f-text-size"> Ultimo accesso oggi alle 12:00 </span>
                                     </div>
                                 </div>
@@ -109,13 +109,13 @@
                         </header>
                         <main class="right-main overflow-y-auto">
                             <div class="row">
-                                <div class="col-12 d-flex" v-bind:class="(message.status == 'sent') ? 'sent-container' : 'received-container'" v-for="message in contacts[activeUser].messages">
+                                <div class="col-12 d-flex" v-bind:class="(message.status == 'sent') ? 'sent-container' : 'received-container'" v-for="(message, index) in contacts[activeUser].messages">
                                     <div class="position-relative" v-bind:class="(message.status == 'sent') ? 'sent' : 'received'">
                                         <span class="position-absolute end-0 f-text-size py-4 px-1 text-color"> {{ message.date }} </span>
                                         {{ message.message }}
+                                        
                                     </div>
                                 </div>
-                                
                                 
                             </div>
                         </main>

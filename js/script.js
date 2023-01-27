@@ -4,6 +4,7 @@ const { createApp } = Vue
     data() {
       return {
         activeUser : 0,
+        clicked : 0,
         contacts: [
 
             {
@@ -186,6 +187,11 @@ const { createApp } = Vue
             return "img/avatar" + this.contacts[number].avatar + ".jpg";
         },
 
+        showActiveUser (index) {
+            this.activeUser = index,
+            this.clicked = this.activeUser
+        }
+        
         
     }
 }).mount('#app')
