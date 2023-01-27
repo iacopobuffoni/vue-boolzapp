@@ -125,7 +125,7 @@
                                     <i class="fa-regular fa-face-smile fs-4"></i>
                                 </div>
                                 <div class="col-8 p-2 h-100">
-                                    <input type="text" class="text-message border-0 ps-3" placeholder="Scrivi un messaggio">
+                                    <input type="text" class="text-message border-0 ps-3" placeholder="Scrivi un messaggio" @keyup.enter="addMessage(activeUser)" v-model="newMessage">
 
                                     </input>
                                 </div>

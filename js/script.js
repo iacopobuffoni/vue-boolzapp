@@ -5,6 +5,8 @@ const { createApp } = Vue
       return {
         activeUser : 0,
         clicked : 0,
+        newMessage: '',
+        answer : 'ok',
         contacts: [
 
             {
@@ -190,7 +192,26 @@ const { createApp } = Vue
         showActiveUser (index) {
             this.activeUser = index,
             this.clicked = this.activeUser
-        }
+        },
+
+        addMessage(number) {
+            const newElement = {
+                message: this.newMessage,
+                status: 'sent'
+            }
+            this.contacts[number].messages.push(newElement),
+            this.newMessage = '',
+            setTimeout (this.userAnswer, 1000)
+        },
+
+        userAnswer (number) {
+            const newAnswer = {
+                message : this.answer,
+                status: 'received'
+            }
+
+            this.contacts[number].messages.push(newAnswer)
+        },
         
         
     }
