@@ -2,7 +2,7 @@ body {
     background-image: url('https://media.istockphoto.com/id/1183632265/it/vettoriale/set-di-icone-di-contatto-e-supporto-progettazione-di-pattern-vettoriali.jpg?s=612x612&w=0&k=20&c=ngLcIq0aYW5rLx0PX-HwHfwyAtuJ61Y2tXQe6gbdBCk=');
 }
 
-main {
+.main-container {
     width: 100%;
     height: 100vh;
 }
@@ -13,4 +13,32 @@ main {
 
 .f-text-size {
     font-size: 12px;
+}
+
+.right-main {
+    height: calc(100% - 70px - 70px);
+    background-image: url(../img/mine.jpg);
+}
+
+.left-main {
+    background-color: #ffffff;
+    height: calc(100% - 140px);
+}
+
+.left-header {
+    height: 140px;
+    background-color: #eaeaea;
+}
+
+.right-header {
+    height: 70px;
+    background-color: #eaeaea;
+}
+
+.text-color {
+    color: #b1b1b1;
+}
+
+.bell-color {
+    color: #8edafc;
 }
