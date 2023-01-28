@@ -53,10 +53,10 @@
                                 </div>
                             </div>
                         </header>
-                        <main class="left-main overflow-y-auto">
+                        <main class="left-main overflow-y-auto w-100">
                             <div class="row">
-                                <div class="col-12">
-                                    <header>
+                                <div class="col-12 position-relative">
+                                    <header class="sticky-top">
                                         <nav class="navbar bg-body-tertiary">
                                             <form class="container-fluid">
                                               <div class="input-group">
@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="">
                                         <span class="mx-2 d-block"> {{ contacts[activeUser].name }} </span>
-                                        <span class="mx-2 f-text-size"> Ultimo accesso oggi alle 12:00 </span>
+                                        <span class="mx-2 f-text-size"> Ultimo accesso oggi alle {{ lastAccess }} </span>
                                     </div>
                                 </div>
                                 <div class="col-6 text-end px-4">

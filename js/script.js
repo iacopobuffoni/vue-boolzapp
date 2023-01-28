@@ -8,6 +8,7 @@ const { createApp } = Vue
         newMessage: '',
         answer : 'ok',
         searchContact: '',
+        lastAccess: 0,
         contacts: [
 
             {
@@ -217,7 +218,8 @@ const { createApp } = Vue
                 date : this.getHour()
             }
 
-            this.contacts[this.activeUser].messages.push(newAnswer)
+            this.contacts[this.activeUser].messages.push(newAnswer),
+            this.lastAccess = this.getHour()
         },
 
         getHour () {

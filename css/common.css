@@ -47,6 +47,10 @@ body {
     background-color: #e9ebeb;
 }
 
+li:hover {
+    cursor: pointer;
+}
+
 .hover {
     cursor: pointer;
 }
