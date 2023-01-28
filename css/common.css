@@ -46,3 +46,7 @@ body {
 .active {
     background-color: #e9ebeb;
 }
+
+.hover {
+    cursor: pointer;
+}

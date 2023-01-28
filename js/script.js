@@ -187,15 +187,18 @@ const { createApp } = Vue
     methods : {
         
         getIcon(number) {
+
             return "img/avatar" + this.contacts[number].avatar + ".jpg";
         },
 
         showActiveUser (index) {
+
             this.activeUser = index,
             this.clicked = this.activeUser
         },
 
         addMessage(number) {
+
             const newElement = {
                 message: this.newMessage,
                 status: 'sent',
@@ -207,6 +210,7 @@ const { createApp } = Vue
         },
 
         userAnswer() {
+
             const newAnswer = {
                 message : this.answer,
                 status: 'received',
@@ -217,12 +221,13 @@ const { createApp } = Vue
         },
 
         getHour () {
+
             let now = new Date();
             let time = now.getHours() + ':' + now.getMinutes();
             return time;
 
-
         },
+        
 
         
         
