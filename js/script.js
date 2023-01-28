@@ -7,6 +7,7 @@ const { createApp } = Vue
         clicked : 0,
         newMessage: '',
         answer : 'ok',
+        searchContact: '',
         contacts: [
 
             {
@@ -197,21 +198,32 @@ const { createApp } = Vue
         addMessage(number) {
             const newElement = {
                 message: this.newMessage,
-                status: 'sent'
+                status: 'sent',
+                date : this.getHour()
             }
             this.contacts[number].messages.push(newElement),
             this.newMessage = '',
             setTimeout (this.userAnswer, 1000)
         },
 
-        userAnswer (number) {
+        userAnswer() {
             const newAnswer = {
                 message : this.answer,
-                status: 'received'
+                status: 'received',
+                date : this.getHour()
             }
 
-            this.contacts[number].messages.push(newAnswer)
+            this.contacts[this.activeUser].messages.push(newAnswer)
         },
+
+        getHour () {
+            let now = new Date();
+            let time = now.getHours() + ':' + now.getMinutes();
+            return time;
+
+
+        },
+
         
         
     }
