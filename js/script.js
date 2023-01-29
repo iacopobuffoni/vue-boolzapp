@@ -230,8 +230,29 @@ const { createApp } = Vue
 
         },
 
-        gettingSearched(contact) {
-            if (contact.name.toLowerCase().includes(this.searchContact.toLowerCase())) return true;
+        gettingSearched() {
+            let _Names = [];
+            let _SplittedNames = [];
+            for (let i = 0; i < this.contacts.length; i++) { 
+                _Names.push(this.contacts[i].name) 
+            }
+
+            for (let i = 0; i < _Names.length; i++) {
+                let _Splitted = _Names[i].split('')
+                _SplittedNames.push(_Splitted)
+                
+            }
+            console.log(_SplittedNames)
+
+            for (let i = 0; i < _SplittedNames.length; i++) {
+                if (_SplittedNames[i].includes(this.searchContact.toLowerCase())) {
+                    return true,
+                    this.conctacts[i].visible = true
+                } else {
+                    
+                }
+            }
+            
         }
         
 

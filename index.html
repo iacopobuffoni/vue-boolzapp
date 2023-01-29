@@ -60,7 +60,7 @@
                                         <nav class="navbar bg-body-tertiary">
                                             <form class="container-fluid">
                                               <div class="input-group">
-                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i> {{gettingSearched()}}</span>
                                                 <input type="text" class="form-control f-text-size" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1" v-model="searchContact" >
                                               </div>
                                             </form>
@@ -68,7 +68,7 @@
                                     </header>
                                     <main>
                                         <ul class="list-unstyled">
-                                            <li class="p-3 d-flex border-bottom position-relative" :class="(clicked == index) ? 'active' : ''" v-show="gettingSearched(contact)" v-for="(contact, index) in contacts" @click="showActiveUser(index)">
+                                            <li class="p-3 d-flex border-bottom position-relative" :class="(clicked == index) ? 'active' : ''" :class="(contact.visible) ? '' : 'hide'" v-for="(contact, index) in contacts" @click="showActiveUser(index)">
                                                 <span class="position-absolute top-0 end-0 f-text-size p-2 text-color"> 12:00 </span>
                                                 <div class="col-2">
                                                     <div class="avatar">
