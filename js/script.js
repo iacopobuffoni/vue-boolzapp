@@ -192,7 +192,7 @@ const { createApp } = Vue
             return "img/avatar" + this.contacts[number].avatar + ".jpg";
         },
 
-        showActiveUser (index) {
+        showActiveUser(index) {
 
             this.activeUser = index,
             this.clicked = this.activeUser
@@ -222,13 +222,17 @@ const { createApp } = Vue
             this.lastAccess = this.getHour()
         },
 
-        getHour () {
+        getHour() {
 
             let now = new Date();
             let time = now.getHours() + ':' + now.getMinutes();
             return time;
 
         },
+
+        gettingSearched(contact) {
+            if (contact.name.toLowerCase().includes(this.searchContact.toLowerCase())) return true;
+        }
         
 
         
